@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dafne Hernández | Desarrolladora Full Stack Jr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <!-- SVG definitions inline con AMBOS SVG reales -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cerezo simple - TU PRIMER SVG -->
+        <symbol id="cherry-blossom" viewBox="0 0 12 12">
+            <path d="M5 10H3V9H2V8h1V7H1v3h1v1h3Zm0 0h1V8h1V7h1V6H7V5H4v1H3v1h1v1h1ZM0 7h1V5h1V4h1v1h1V2H3v1H1v1H0Zm5 0V6h1v1Zm1 4h3v-1h1V7H8v1h1v1H8v1H6ZM4 2h1V1H4Zm1 1h1V2H5Zm5 4h1V4h-1V3H8V2H7v3h1V4h1v1h1ZM6 2h1V1H6Zm0 0" fill="currentColor"/>
+        </symbol>
+        
+        <!-- Cerezo completo - TU SEGUNDO SVG (cherry-blossom-full) -->
+        <symbol id="cherry-blossom-full" viewBox="0 0 128 128">
+            <path fill="currentColor" d="M61.41 14.58s1.8-8.73 3.72-9.24c1.93-.51 10.34 1.31 14.47 3.5c5.77 3.05 9.33 8.14 10.18 14.34c.9 6.64-1.67 12.2-1.67 12.2s6.03-3.59 13.22-2.95s12.58 4.11 14.64 6.68c2.05 2.57 4.88 5.39 4.49 6.68c-.39 1.28-7.83 5.91-7.45 7.06c.39 1.16 9.12.51 10.01 2.05c.9 1.54 2.7 11.43-3.85 18.49s-12.97 8.09-12.97 8.09s6.48 6.09 6.82 14.41c.28 6.81-1.55 10.88-5.27 12.3c-3.72 1.41-10.66-3.08-10.66-3.08s6.03 10.78 3.34 12.45c-2.7 1.67-4.03-1.31-5.14-1.03c-.91.23.64 2.44-1.41 4.37s-10.91 3.21-18.74-1.03s-10.27-10.91-10.27-10.91s-2.11 8.1-11.74 12.21s-16.64-.92-17.92-1.69s-.77-6.93-.51-7.96s1.41-3.47.64-3.98s-3.34 3.08-5.14 4.24s-4.11 2.44-6.42.51s-7.83-8.35-6.42-16.95s6.29-13.48 6.29-13.48s-10.27-.9-15.28-9.63s-4.35-17.46-3.45-18.62s8.6-1.28 8.6-1.28s-7.32-4.24-6.55-7.57c.77-3.34 4.49-.77 5.52-1.8s-2.62-4.93.26-6.97c2.16-1.53 5.96-4.38 13.22-4.97c7.65-.63 12.97 3.21 12.97 3.21s-3.27-5.53-1.92-11.81c1.07-4.97 4.75-9.24 8.21-11.68s8.09-4.37 10.14-4.37s6.04 8.21 6.04 8.21"/>
+            <path fill="currentColor" d="M79.68 46.37c1.38 1.59 4.29-.58 6.2-3.82c1.46-2.47 3.13-6.69 2.54-7.21s-5.14 3.02-6.68 4.77c-1.53 1.76-3.15 5-2.06 6.26m7.74 30.96c-.37 2.36 5.51 4.03 8.64 4.4c2.97.35 10.13.75 10.15-.26c.03-1.01-5.65-4.94-10.15-5.89c-3.95-.83-8.32-.26-8.64 1.75M65.26 92.39c-2.01-.12-2.76 4.56-2.39 8.16s1.14 8.3 2 8.39s2.35-5.11 2.72-9.98c.23-3.06-.53-6.46-2.33-6.57m-41.6-10.53c.14.67 7.08.67 10.79-.39s6.04-3.23 5.62-4.82s-5.08-1.14-7.69-.16c-3.39 1.27-8.85 4.71-8.72 5.37M39.33 34.6c-.79.58 1.75 5.41 3.45 7.48s4.35 4.35 5.67 3.76c1.33-.58.11-4.77-2.81-7.58c-1.41-1.36-5.51-4.24-6.31-3.66"/>
+            <path fill="currentColor" d="M78.4 45.99c-1.82-.94-7.53 6.76-14.19 6.49s-13.52-7.33-14.73-6.25s3.65 8.88 1.11 16.5c-2.32 6.97-10.46 11.61-9.58 13.33c.82 1.61 8.71-1.73 15.27 1.58c7.65 3.87 6.19 13.75 8.88 13.82s1.5-8.62 8.14-12.81c6.39-4.04 13.21-.9 13.79-2.96c.67-2.42-8-5.41-9.81-13.68c-2.11-9.55 3.01-15.05 1.12-16.02"/>
+            <path fill="currentColor" d="M59.73 58.83c-1.37.46-4.92 8.59-4.36 9.59s7.85 7.29 9.78 7.29s8.28-6.1 8.34-7.04c.06-.93-3.11-9.22-4.17-9.84s-8.28-.44-9.59 0"/>
+            <path fill="currentColor" d="M68.8 54.08c-1.57 1.46-1.72 4.26.18 5.83c2.03 1.67 4.79 1.04 5.96-.59c1.03-1.42 1.13-3.61-.59-5.15c-1.06-.95-3.56-1.94-5.55-.09m2.48 15.63c-.27 2.62 1.94 4.61 4.15 4.56c2.89-.06 3.96-2.47 3.93-4.11c-.05-2.21-1.58-4.11-4.02-4.02s-3.83 1.36-4.06 3.57m-6.23 4.69c-1.94.05-3.97 1.35-3.93 4.2c.04 2.62 2.08 3.79 4.11 3.79s3.7-1.45 3.7-3.93s-1.8-4.11-3.88-4.06m-12.37-8.44c-2.89 0-4.11 1.99-4.11 4.25s1.67 3.9 4.34 3.79c2.3-.09 3.73-2.04 3.52-4.2c-.23-2.35-1.31-3.84-3.75-3.84m1.98-12.42c-1.66 1.61-1.72 4.38.05 5.83c1.38 1.14 3.84 1.54 5.46-.14c1.63-1.67 1.35-4.06-.09-5.46c-1.44-1.41-3.79-1.81-5.42-.23"/>
+        </symbol>
+    </svg>
+
+    <!-- Decoración de cerezos flotantes -->
+    <div class="cherry-decoration" style="top: 10%; left: 5%;">
+        <svg class="cherry-svg large">
+            <use href="#cherry-blossom-full"></use>
+        </svg>
+    </div>
+    <div class="cherry-decoration" style="top: 20%; right: 8%;">
+        <svg class="cherry-svg">
+            <use href="#cherry-blossom-full"></use>
+        </svg>
+    </div>
+    <div class="cherry-decoration small" style="top: 40%; left: 10%;">
+        <svg class="cherry-svg small">
+            <use href="#cherry-blossom"></use>
+        </svg>
+    </div>
+    <div class="cherry-decoration small" style="bottom: 30%; right: 12%;">
+        <svg class="cherry-svg small">
+            <use href="#cherry-blossom"></use>
+        </svg>
+    </div>
+    <div class="cherry-decoration" style="bottom: 20%; left: 7%;">
+        <svg class="cherry-svg">
+            <use href="#cherry-blossom-full"></use>
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <!-- SOLO AQUÍ: Icono de flor en "Dafne Hernández" -->
+                <svg class="logo-svg">
+                    <use href="#cherry-blossom-full"></use>
+                </svg>
+                Dafne Hernández
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">
+                        <!-- SIN icono de flor en navegación -->
+                        Inicio
+                    </a></li>
+                    <li><a href="#about">
+                        Acerca de mí
+                    </a></li>
+                    <li><a href="#skills">
+                        Habilidades
+                    </a></li>
+                    <li><a href="#projects">
+                        Proyectos
+                    </a></li>
+                    <li><a href="#contact">
+                        Contacto
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home">
+                    Inicio
+                </a></li>
+                <li><a href="#about">
+                    Acerca de mí
+                </a></li>
+                <li><a href="#skills">
+                    Habilidades
+                </a></li>
+                <li><a href="#projects">
+                    Proyectos
+                </a></li>
+                <li><a href="#contact">
+                    Contacto
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Dafne Hernández</h1>
+                <h2>Desarrolladora Java Full Stack Jr.</h2>
+                <p>Soy Ingeniera en Sistemas con formación en desarrollo Full Stack y bases en programación, validación y automatización. Me considero disciplinada, creativa y orientada a la mejora continua.</p>
+                <a href="#contact" class="btn">
+                    <!-- SIN icono de flor en botón -->
+                    Contactar
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="profile-img" style="background-color: #f8a5c2; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <!-- SIN icono de flor en título -->
+                    Acerca de mí
+                </h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy Ingeniera en Sistemas con formación en desarrollo Full Stack y bases en programación, validación y automatización. Cuento con experiencia en el desarrollo de soluciones web utilizando tecnologías frontend y backend, lo que ha fortalecido mi capacidad de análisis, resolución de problemas y trabajo colaborativo.</p>
+                    <p>Me considero disciplinada, creativa y orientada a la mejora continua. Busco integrarme a equipos de desarrollo donde pueda aportar valor mediante la implementación de soluciones funcionales, escalables y con impacto real.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <!-- CON icono original (no flor) -->
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(+52) 2293653980</span>
+                        </div>
+                        <div class="contact-item">
+                            <!-- CON icono original (no flor) -->
+                            <i class="fas fa-envelope"></i>
+                            <span>dafnehdzvzq@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <!-- CON icono original (no flor) -->
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zapopan, Jalisco, México</span>
+                        </div>
+                        <div class="contact-item">
+                            <!-- CON icono original (no flor) -->
+                            <i class="fas fa-user-tie"></i>
+                            <span>Dispuesta a reubicación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <!-- SIN icono de flor en título -->
+                    Habilidades
+                </h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Habilidades Técnicas</h3>
+                    <ul class="skill-list">
+                        <!-- CON iconos de flor en habilidades -->
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            C/C++
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Python
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Java
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Linux & Bash scripting
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Docker
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            HTML, CSS, JavaScript
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Visual Studio Code
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Git
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            SCRUM & Kanban
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Springboot
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            SQL
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Habilidades Blandas</h3>
+                    <ul class="skill-list">
+                        <!-- CON iconos de flor en habilidades -->
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Liderazgo
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Trabajo en equipo
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Compromiso
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Resolución de problemas
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Escucha activa
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Proactividad
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Flexibilidad
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Asertividad
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Comunicación
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Persuasión
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Habilidades de presentación
+                        </li>
+                        <li>
+                            <svg class="cherry-svg small light">
+                                <use href="#cherry-blossom"></use>
+                            </svg>
+                            Confiabilidad
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <!-- SIN icono de flor en título -->
+                    Proyectos
+                </h2>
+            </div>
+            
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img" style="background-color: #f8a5c2;">
+                        <!-- SIN icono de flor en imagen de proyecto -->
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <!-- SIN icono de flor en título de proyecto -->
+                            Lolo's Cafe - E-commerce
+                        </h3>
+                        <span class="date">Diciembre 2025 - En desarrollo</span>
+                        <p>E-commerce para la gestión centralizada de pedidos en una cafetería local, con menú digital dinámico que optimiza la atención y mejora la experiencia de usuario.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <p><strong>Rol:</strong> FullStack Developer</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img" style="background-color: #e84393;">
+                        <!-- SIN icono de flor en imagen de proyecto -->
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <!-- SIN icono de flor en título de proyecto -->
+                            Crimson Garrison - Sitio web informativo
+                        </h3>
+                        <span class="date">Junio 2025 - Noviembre 2025</span>
+                        <p>Sitio web informativo con el objetivo de difundir información sobre la comunidad Crimson Garrison (Star Wars), mostrar una galería de imágenes y facilitar el contacto para eventos.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <p><strong>Rol:</strong> Frontend Developer</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img" style="background-color: #fd79a8;">
+                        <!-- SIN icono de flor en imagen de proyecto -->
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>
+                            <!-- SIN icono de flor en título de proyecto -->
+                            Validaciones Post-Silicio - Intel
+                        </h3>
+                        <span class="date">Marzo 2022 - Marzo 2024</span>
+                        <p>Ejecución de pruebas de co-validación post-silicio para clientes (DELL) dando soporte al equipo de customer support y asegurando la calidad de soluciones de servidor.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Automatización</span>
+                        </div>
+                        <p><strong>Rol:</strong> Software Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <!-- SIN icono de flor en título -->
+                    Contacto
+                </h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info-card">
+                    <h3>
+                        <!-- SIN icono de flor en subtítulo -->
+                        Información de contacto
+                    </h3>
+                    <p>Estoy interesada en oportunidades de trabajo como Desarrolladora Full Stack Jr. ¡No dudes en contactarme!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <!-- SIN icono de flor - usando texto simple -->
+                            <span>📧 dafnehdzvzq@gmail.com</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <!-- SIN icono de flor - usando texto simple -->
+                            <span>📱 (+52) 2293653980</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <!-- SIN icono de flor - usando texto simple -->
+                            <span>📍 Zapopan, Jalisco, México</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <a href="https://www.linkedin.com/in/dafne-hern%C3%A1ndez-v%C3%A1zquez-8a230421a/" target="_blank" class="social-link">
+                            <!-- SIN icono de flor - usando icono de Font Awesome -->
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn: Dafne Hernández</span>
+                        </a>
+                        <a href="https://github.com/DafneHernandez" target="_blank" class="social-link">
+                            <!-- SIN icono de flor - usando icono de Font Awesome -->
+                            <i class="fab fa-github"></i>
+                            <span>GitHub: Dafne Hernandez</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="color: white;">
+                    <!-- SOLO AQUÍ: Icono de flor en footer -->
+                    <svg class="logo-svg white">
+                        <use href="#cherry-blossom-full"></use>
+                    </svg>
+                    Dafne Hernández
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dafne-hern%C3%A1ndez-v%C3%A1zquez-8a230421a/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/DafneHernandez" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:dafnehdzvzq@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Dafne Hernández. Todos los derechos reservados.</p>
+                <p>Desarrollado con <i class="fas fa-heart" style="color: var(--primary-color);"></i> temática de cerezos y mucho amor</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="src/js/logic.js" defer></script>
+</body>
+</html>
